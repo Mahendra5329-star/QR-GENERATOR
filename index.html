@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR User Data Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">REAL-TIME QR GENERATOR</p>
+      <h1>User Data → QR Code</h1>
+      <p class="subtitle">
+        Enter user details and the QR code updates instantly while you type.
+      </p>
+    </section>
+
+    <section class="app-grid">
+      <div class="card form-card">
+        <div class="card-header">
+          <h2>User Details</h2>
+          <span class="live">LIVE</span>
+        </div>
+
+        <form id="userForm" autocomplete="off">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" placeholder="Tarun D" />
+
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="tarun@example.com" />
+
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" placeholder="+91 98765 43210" />
+
+          <label for="company">Company / College</label>
+          <input id="company" type="text" placeholder="Your College or Company" />
+
+          <label for="role">Role</label>
+          <input id="role" type="text" placeholder="Student / Developer" />
+
+          <label for="website">Website</label>
+          <input id="website" type="url" placeholder="https://example.com" />
+
+          <label for="message">Extra Information</label>
+          <textarea id="message" rows="4" placeholder="Anything else you want inside the QR..."></textarea>
+
+          <div class="actions">
+            <button type="button" class="secondary" id="clearBtn">Clear</button>
+            <button type="button" class="primary" id="downloadBtn">Download QR</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card qr-card">
+        <div class="card-header">
+          <h2>Your QR Code</h2>
+          <span id="status">Waiting for data</span>
+        </div>
+
+        <div class="qr-wrapper">
+          <div id="qrcode" aria-label="Generated QR code"></div>
+        </div>
+
+        <div class="preview">
+          <h3>Encoded Data</h3>
+          <pre id="dataPreview">Fill in the form to generate your QR code.</pre>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Runs entirely in your browser. No user data is sent to a server.</p>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
